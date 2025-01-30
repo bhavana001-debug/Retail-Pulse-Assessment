@@ -71,6 +71,7 @@ import seaborn as sns
 import statsmodels.api as sm
 from collections import defaultdict, Counter
 import gc
+```
 
 
 ### 3.2. Data Loading
@@ -78,20 +79,20 @@ import gc
 ```python
 sales_data = pd.read_csv(SALES_FILE)
 holiday_data = pd.read_csv(HOLIDAY_FILE)
+```
 
-3.3. Data Cleaning and Preprocessing
+### 3.3. Data Cleaning and Preprocessing
 Handle Missing Values: Drop rows with missing or invalid entries.
 Standardize Date Formats: Convert Order Date and Date columns to datetime format.
 Merge Datasets: Combine sales_data and holiday_data based on Order Date.
-python
-Copy
-Edit
+```python
 sales_data['Order Date'] = pd.to_datetime(sales_data['Order Date'])
 holiday_data['Date'] = pd.to_datetime(holiday_data['Date'])
 
 sales_data = sales_data.merge(holiday_data, how="left", left_on="Order Date", right_on="Date")
 sales_data["Holiday_Flag"] = sales_data["Date"].notnull().astype(int)
-3.4. Exploratory Data Analysis (EDA)
+```
+### 3.4. Exploratory Data Analysis (EDA)
 Sales Trends Analysis
 python
 Copy
