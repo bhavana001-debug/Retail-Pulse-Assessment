@@ -62,7 +62,6 @@ By integrating **internal sales data** with **external holiday data**, the study
 The analysis follows a structured approach to **handle large datasets efficiently** and extract **meaningful insights**.
 
 ### 3.1. Environment Setup
-**Libraries Imported:**
 ```python
 import pandas as pd
 import numpy as np
@@ -75,7 +74,6 @@ import gc
 
 
 ### 3.2. Data Loading
-**Libraries Imported:**
 ```python
 sales_data = pd.read_csv(SALES_FILE)
 holiday_data = pd.read_csv(HOLIDAY_FILE)
@@ -94,9 +92,7 @@ sales_data["Holiday_Flag"] = sales_data["Date"].notnull().astype(int)
 ```
 ### 3.4. Exploratory Data Analysis (EDA)
 Sales Trends Analysis
-python
-Copy
-Edit
+```python
 sales_trends = sales_data.groupby("Order Date")["Sales"].sum()
 
 plt.figure(figsize=(12, 6))
@@ -105,40 +101,36 @@ plt.title("Sales Trends Over Time")
 plt.xlabel("Date")
 plt.ylabel("Total Sales")
 plt.show()
-3.5. Customer Segmentation
+```
+### 3.5. Customer Segmentation
 Clustering Customers Using K-Means
-python
-Copy
-Edit
+```python
 from sklearn.cluster import KMeans
 
 customer_data = sales_data.groupby("Customer ID").agg({"Sales": "sum", "Profit": "sum", "Discount": "mean"})
 kmeans = KMeans(n_clusters=4, random_state=42).fit(customer_data)
 customer_data["Segment"] = kmeans.labels_
-3.6. Regression and Profitability Analysis
+```
+### 3.6. Regression and Profitability Analysis
 Ordinary Least Squares (OLS) Regression
-python
-Copy
-Edit
+```python
 X = sales_data[["Discount", "Profit"]]
 y = sales_data["Sales"]
 
 X = sm.add_constant(X)
 model = sm.OLS(y, X).fit()
 print(model.summary())
-3.7. Holiday Impact Analysis
-python
-Copy
-Edit
+```
+### 3.7. Holiday Impact Analysis
+```python
 avg_sales_holidays = sales_data[sales_data["Holiday_Flag"] == 1]["Sales"].mean()
 avg_sales_non_holidays = sales_data[sales_data["Holiday_Flag"] == 0]["Sales"].mean()
 
 print(f"Average Sales on Holidays: ${avg_sales_holidays:.2f}")
 print(f"Average Sales on Non-Holidays: ${avg_sales_non_holidays:.2f}")
-3.8. Identifying Low-Performing Products
-python
-Copy
-Edit
+```
+### 3.8. Identifying Low-Performing Products
+```python
 low_perf_products = sales_data.groupby("Product ID").agg({"Sales": "sum", "Profit": "sum"}).sort_values(by="Profit")
 
 plt.figure(figsize=(10, 5))
@@ -146,9 +138,10 @@ sns.barplot(x=low_perf_products.index[:10], y=low_perf_products["Profit"][:10], 
 plt.xticks(rotation=90)
 plt.title("Low-Performing Products by Profit")
 plt.show()
-3.9. Power BI Dashboard Integration
+```
+### 3.9. Power BI Dashboard Integration
 Key Visualizations
-Sales Trends: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
+1.Sales Trends: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
 Customer Segmentation: Pie Chart of customer spending categories.
 Profit by Region: Map with color scale for profit.
 Holiday Impact: Bar Chart comparing holiday vs. non-holiday sales.
