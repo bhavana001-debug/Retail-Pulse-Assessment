@@ -73,13 +73,12 @@ import statsmodels.api as sm
 from collections import defaultdict, Counter
 import gc
 
-### 3.2. Data Loading
+**### 3.2. Environment Setup**
 SALES_FILE = "superstore_sales.csv"
 HOLIDAY_FILE = "holiday.csv"
 
 sales_data = pd.read_csv(SALES_FILE)
 holiday_data = pd.read_csv(HOLIDAY_FILE)
-
 
 
 
