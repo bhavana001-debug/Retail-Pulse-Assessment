@@ -1,79 +1,85 @@
-#Retail Sales Analysis and Insights for RetailPulse
-Overview
-This project analyzes retail sales data to provide actionable insights for RetailPulse. It integrates internal transaction data with external holiday data, leveraging Power BI dashboards, advanced analytics (regression, clustering), and data-driven recommendations to optimize business decisions.
+**Retail Sales Analysis and Insights for RetailPulse**
 
-📖 Table of Contents
-Problem Definition
-Datasets Used
-Methodology
-Key Findings
-Recommendations
-Challenges & Assumptions
-Code & Scripts
-Power BI Dashboard Integration
-Future Enhancements
-🔍 Problem Definition
-Objective:
-RetailPulse seeks to optimize sales, marketing, and pricing strategies by analyzing:
+## Table of Contents
 
-Sales performance by region, product category, and customer segment
-Impact of discounts, delivery times, and holidays on revenue
-Customer behavior, including spending patterns and repeat purchases
-Performance of low-performing products and regions
-Data-driven insights for pricing, promotions, and inventory management
-📂 Datasets Used
-1️⃣ Internal Dataset: Superstore Sales Data
-Transaction details (Order ID, Customer ID, Product, Category, Sales, Profit, Discount)
-Customer demographics (City, State, Region)
-Order details (Order Date, Ship Date, Ship Mode)
-2️⃣ External Dataset: Holiday Data
-Public holiday dataset (Year, Holiday Name, Date)
-Created a holiday.csv file to merge with sales data
-⚙️ Methodology
-🔹 1. Data Preparation
-Cleaning: Handled missing values, duplicates, inconsistent formats
-Merging: Combined internal & external datasets on Order Date
-Feature Engineering: Created new features like Holiday Flag
-🔹 2. Exploratory Data Analysis (EDA)
-Sales Trends: Time-series analysis
-Customer Segmentation: K-Means clustering on spending habits
-Product & Regional Insights: Identified top & low-performing categories
-Holiday Impact: Compared holiday vs. non-holiday sales
-🔹 3. Advanced Analytics
-Regression Analysis: Impact of discounts, profit margins, holidays on sales
-Clustering (K-Means): Segmented customers into Low, Medium, High, Very High spenders
-Low-Performing Analysis: Identified low-profit regions and products
-🔹 4. Data Visualization
-Power BI dashboards for interactive reporting
-Filters for Region, Category, Customer Segment
-Visualizations for Sales trends, Profitability, Customer segmentation, Holiday impact
-📊 Key Findings
-📈 Sales Insights
-✅ Total Sales: $1.8M across 4,407 transactions
-✅ Top-selling categories: Technology & Office Supplies
-✅ High-revenue cities: New York, Los Angeles, Seattle
+1. [Introduction](#introduction)
+2. [Data Overview](#data-overview)
+3. [Methodology](#methodology)
+    - [3.1. Environment Setup](#31-environment-setup)
+    - [3.2. Data Loading](#32-data-loading)
+    - [3.3. Data Cleaning and Preprocessing](#33-data-cleaning-and-preprocessing)
+    - [3.4. Exploratory Data Analysis (EDA)](#34-exploratory-data-analysis-eda)
+    - [3.5. Customer Segmentation](#35-customer-segmentation)
+    - [3.6. Regression and Profitability Analysis](#36-regression-and-profitability-analysis)
+    - [3.7. Holiday Impact Analysis](#37-holiday-impact-analysis)
+    - [3.8. Identifying Low-Performing Products](#38-identifying-low-performing-products)
+    - [3.9. Power BI Dashboard Integration](#39-power-bi-dashboard-integration)
+4. [Key Performance Indicators (KPIs)](#key-performance-indicators-kpis)
+5. [Findings and Recommendations](#findings-and-recommendations)
+6. [Challenges & Assumptions](#challenges--assumptions)
+7. [Future Enhancements](#future-enhancements)
 
-🎯 Customer Insights
-✅ Top 10% of customers drive ~70% of revenue
-✅ Low-spending customers make up 50% of transactions but contribute only 10% of revenue
+---
 
-📆 Holiday Impact
-✅ More transactions occur during holidays, but average sales per transaction are lower
-✅ Discounts reduce profitability, requiring careful promotion planning
+## Introduction
 
-🏙️ Regional Performance
-✅ Top states: California, New York, Washington
-✅ Underperforming states: Texas, Pennsylvania (negative profits)
+RetailPulse, a **retail analytics company**, aims to leverage data-driven insights to optimize decision-making. This study **analyzes retail sales trends** to identify **high-performing products, profitable customer segments, and seasonal sales variations**. 
 
-✅ Recommendations
-🛒 Sales Optimization
-🔹 Promote high-margin products during peak sales periods
-🔹 Bundle low-performing products with top-selling items
+By integrating **internal sales data** with **external holiday data**, the study provides actionable insights to **enhance sales performance, improve customer retention, and optimize discounting strategies**.
 
-📢 Marketing & Customer Retention
-🔹 Loyalty programs & personalized offers for high-spending customers
-🔹 Target low & medium spenders with incentives to boost spending
+---
 
-🎁 Holiday-Specific Strategies
-🔹 Offer bundled discounts instead of blanket discounts to maintain profit margins
+## Data Overview
+
+### Datasets Utilized
+
+1. **Superstore Sales Data (`superstore_sales.csv`):**
+    - **Description:** Contains retail transactions, customer information, and product sales.
+    - **Key Columns:**
+        - `Order ID`: Unique identifier for each order.
+        - `Customer ID`: Unique customer identifier.
+        - `Category`: Product category (Technology, Furniture, Office Supplies).
+        - `Sales`: Revenue generated from the transaction.
+        - `Profit`: Net profit/loss for the transaction.
+        - `Discount`: Discount percentage applied.
+
+2. **Holiday Data (`holiday.csv`):**
+    - **Description:** Federal holiday dataset used to assess holiday sales impact.
+    - **Key Columns:**
+        - `Date`: Holiday date.
+        - `Holiday Name`: Name of the federal holiday.
+
+### Data Scope
+
+- **Time Period:** 2014 - 2018.
+- **Volume:** Thousands of transactions across multiple regions.
+- **Geographical Coverage:** United States.
+
+---
+
+## 3. Methodology
+
+The analysis follows a structured approach to **handle large datasets efficiently** and extract **meaningful insights**.
+
+### 3.1. Environment Setup
+
+**Libraries Imported:**
+```python
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import statsmodels.api as sm
+from collections import defaultdict, Counter
+import gc
+
+### 3.2. Data Loading
+SALES_FILE = "superstore_sales.csv"
+HOLIDAY_FILE = "holiday.csv"
+
+sales_data = pd.read_csv(SALES_FILE)
+holiday_data = pd.read_csv(HOLIDAY_FILE)
+
+
+
 
