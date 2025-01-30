@@ -73,12 +73,9 @@ from collections import defaultdict, Counter
 import gc
 
 
-3.2. Data Loading
-
-This ensures that the code block is properly terminated, and the next section starts cleanly. 🚀 Let me know if you need any further refinements! 😊
-
-
-
+### 3.2. Data Loading
+**Libraries Imported:**
+```python
 sales_data = pd.read_csv(SALES_FILE)
 holiday_data = pd.read_csv(HOLIDAY_FILE)
 
