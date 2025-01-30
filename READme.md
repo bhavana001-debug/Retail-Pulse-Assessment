@@ -70,7 +70,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import statsmodels.api as sm
 from collections import defaultdict, Counter
-import gc
+import gc```
 
 
 3.2. Data Loading
