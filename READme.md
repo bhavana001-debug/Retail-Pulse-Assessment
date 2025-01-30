@@ -62,7 +62,6 @@ By integrating **internal sales data** with **external holiday data**, the study
 The analysis follows a structured approach to **handle large datasets efficiently** and extract **meaningful insights**.
 
 ### 3.1. Environment Setup
-
 **Libraries Imported:**
 ```python
 import pandas as pd
@@ -73,12 +72,17 @@ import statsmodels.api as sm
 from collections import defaultdict, Counter
 import gc
 
-**### 3.2. Environment Setup**
+### 3.2. Environment Setup**
 SALES_FILE = "superstore_sales.csv"
 HOLIDAY_FILE = "holiday.csv"
 
 sales_data = pd.read_csv(SALES_FILE)
 holiday_data = pd.read_csv(HOLIDAY_FILE)
+
+### 3.3. Data Cleaning and Preprocessing
+Handle Missing Values: Drop rows with missing or invalid entries.
+Standardize Date Formats: Convert Order Date and Date columns to datetime format.
+Merge Datasets: Combine sales_data and holiday_data based on Order Date.
 
 
 
