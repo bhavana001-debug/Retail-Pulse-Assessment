@@ -140,41 +140,45 @@ plt.title("Low-Performing Products by Profit")
 plt.show()
 ```
 ### 3.9. Power BI Dashboard Integration
-Key Visualizations
-1.Sales Trends: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
-Customer Segmentation: Pie Chart of customer spending categories.
-Profit by Region: Map with color scale for profit.
-Holiday Impact: Bar Chart comparing holiday vs. non-holiday sales.
-Steps to Load Data in Power BI
-Open Power BI Desktop.
-Click Home > Get Data > CSV.
-Select cleaned_sales_data.csv.
-Click Load to import data.
-Key Performance Indicators (KPIs)
-Total Sales Growth Rate
-Sales by Category and Store
-Customer Segmentation Metrics
-Holiday Impact on Sales
-Profitability Analysis (Revenue - Cost)
-Discount vs. Sales Relationship
-Regional Performance Metrics
-Findings and Recommendations
-Key Insights
-✅ Technology and Office Supplies dominate sales
-✅ Discounts negatively impact profit margins
-✅ Holiday promotions increase transactions but lower per-transaction revenue
-✅ Certain states (Texas, Pennsylvania) have negative profit margins
+### Key Visualizations
+### 1.Sales Trends: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
+### 2.Customer Segmentation: Pie Chart of customer spending categories.
+### 3.Profit by Region: Map with color scale for profit.
+### 4.Holiday Impact: Bar Chart comparing holiday vs. non-holiday sales.
 
-Strategic Recommendations
+### Steps to Load Data in Power BI
+1.Open Power BI Desktop.
+2.Click Home > Get Data > CSV.
+3.Select cleaned_sales_data.csv.
+4.Click Load to import data.
+
+### Key Performance Indicators (KPIs)
+1.Total Sales Growth Rate
+2.Sales by Category and Store
+3.Customer Segmentation Metrics
+4.Holiday Impact on Sales
+5.Profitability Analysis (Revenue - Cost)
+6.Discount vs. Sales Relationship
+7.Regional Performance Metrics
+
+### Findings and Recommendations
+### Key Insights
+1.Technology and Office Supplies dominate sales
+2.Discounts negatively impact profit margins
+3.Holiday promotions increase transactions but lower per-transaction revenue
+4.Certain states (Texas, Pennsylvania) have negative profit margins
+
+### Strategic Recommendations
 🔹 Optimize holiday promotions to maintain profitability.
 🔹 Focus retention efforts on high-value customers.
 🔹 Reduce excessive discounting on low-margin products.
 🔹 Improve logistics in underperforming regions.
 
-Challenges & Assumptions
-Assumption: Federal holidays uniformly impact all regions.
-Challenge: High multicollinearity between Discount and Profit Margin.
-Future Enhancements
+### Challenges & Assumptions
+### Assumption: Federal holidays uniformly impact all regions.
+### Challenge: High multicollinearity between Discount and Profit Margin.
+
+### Future Enhancements
 🔹 Incorporate local holidays for better regional analysis.
 🔹 Expand into predictive analytics for sales forecasting.
 🔹 Improve shipping & logistics data integration.
