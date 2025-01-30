@@ -141,10 +141,10 @@ plt.show()
 ```
 ### 3.9. Power BI Dashboard Integration
 ### Key Visualizations
--**1.Sales Trends**: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
--**2.Customer Segmentation**: Pie Chart of customer spending categories.
--**3.Profit by Region**: Map with color scale for profit.
--**4.Holiday Impact**: Bar Chart comparing holiday vs. non-holiday sales.
+- **Sales Trends**: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
+- **Customer Segmentation**: Pie Chart of customer spending categories.
+- **Profit by Region**: Map with color scale for profit.
+- **Holiday Impact**: Bar Chart comparing holiday vs. non-holiday sales.
 ### Steps to Load Data in Power BI
 - Open Power BI Desktop.
 - Click Home > Get Data > CSV.
