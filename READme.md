@@ -141,18 +141,18 @@ plt.show()
 ```
 ### 3.9. Power BI Dashboard Integration
 ### Key Visualizations
-### 1.Sales Trends: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
-### 2.Customer Segmentation: Pie Chart of customer spending categories.
-### 3.Profit by Region: Map with color scale for profit.
-### 4.Holiday Impact: Bar Chart comparing holiday vs. non-holiday sales.
-
+1.Sales Trends: Line Chart with Order Date on X-axis and Total Sales on Y-axis.
+2.Customer Segmentation: Pie Chart of customer spending categories.
+3.Profit by Region: Map with color scale for profit.
+4.Holiday Impact: Bar Chart comparing holiday vs. non-holiday sales.
 ### Steps to Load Data in Power BI
 1.Open Power BI Desktop.
 2.Click Home > Get Data > CSV.
 3.Select cleaned_sales_data.csv.
 4.Click Load to import data.
 
-### Key Performance Indicators (KPIs)
+---
+### 4.Key Performance Indicators (KPIs)
 1.Total Sales Growth Rate
 2.Sales by Category and Store
 3.Customer Segmentation Metrics
@@ -161,24 +161,26 @@ plt.show()
 6.Discount vs. Sales Relationship
 7.Regional Performance Metrics
 
-### Findings and Recommendations
+---
+### 5.Findings and Recommendations
 ### Key Insights
 1.Technology and Office Supplies dominate sales
 2.Discounts negatively impact profit margins
 3.Holiday promotions increase transactions but lower per-transaction revenue
 4.Certain states (Texas, Pennsylvania) have negative profit margins
-
 ### Strategic Recommendations
 🔹 Optimize holiday promotions to maintain profitability.
 🔹 Focus retention efforts on high-value customers.
 🔹 Reduce excessive discounting on low-margin products.
 🔹 Improve logistics in underperforming regions.
 
-### Challenges & Assumptions
-### Assumption: Federal holidays uniformly impact all regions.
-### Challenge: High multicollinearity between Discount and Profit Margin.
+---
+### 6.Challenges & Assumptions
+Assumption: Federal holidays uniformly impact all regions.
+Challenge: High multicollinearity between Discount and Profit Margin.
 
-### Future Enhancements
+---
+### 7.Future Enhancements
 🔹 Incorporate local holidays for better regional analysis.
 🔹 Expand into predictive analytics for sales forecasting.
 🔹 Improve shipping & logistics data integration.
